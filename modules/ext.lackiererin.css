@@ -1,0 +1,14 @@
+#p-banner.doorstatus {
+	padding: 0.2em;
+	display: inline-block;
+	background-color: #c9a300;
+}
+
+#p-banner.doorstatus-open {
+	background-color: #2ec828;
+}
+
+#p-banner.doorstatus-closed {
+	background-color: #F76565;
+}
+

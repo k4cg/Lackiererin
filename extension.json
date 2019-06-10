@@ -1,0 +1,30 @@
+{
+	"name": "Lckiererin",
+	"author": "Poschi",
+	"url": "https://k4cg.org/",
+	"description": "Adds special K4CG-Needs",
+	"version": "0.0.1",
+	"license-name": "MIT",
+	"type": "other",
+	"manifest_version": 1,
+
+	"AutoloadClasses": {
+		"Lackiererin": "Lackiererin.php"
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "modules",
+		"remoteExtPath": "Lackiererin/modules"
+	},
+	"ResourceModules": {
+		"ext.lackiererin": {
+			"group": "ext.lackiererin",
+			"scripts": [
+				"ext.lackiererin.js"
+			],
+			"styles": "ext.lackiererin.css"
+		}
+	},
+	"Hooks": {
+		"BeforePageDisplay": "Lackiererin::onBeforePageDisplay"
+	}
+}
