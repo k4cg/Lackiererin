@@ -1,5 +1,5 @@
 let xhttp = new XMLHttpRequest();
-xhttp.timeout = 2000;
+xhttp.timeout = 5000;
 xhttp.onreadystatechange = function() {
 
 	let statusText = document.getElementById("p-banner");
