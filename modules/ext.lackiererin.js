@@ -1,6 +1,6 @@
 let xhttp = new XMLHttpRequest();
 xhttp.timeout = 5000;
-xhttp.onreadystatechange = function() {
+xhttp.onreadystatechange = function () {
 
 	let statusText = document.getElementById("p-banner");
 
@@ -9,17 +9,19 @@ xhttp.onreadystatechange = function() {
 		statusText.innerHTML = "Ungewiss";
 	};
 	if (this.readyState == 4 && this.status == 200) {
-		let stats = JSON.parse(this.responseText);
-		if(stats.door === "open") {
-			statusText.classList.add("doorstatus-open");
-			statusText.innerHTML = "Geöffnet";
-		} else if (stats.door === "closed") {
-			statusText.classList.add("doorstatus-closed");
-			statusText.innerHTML = "Geschlossen";
+		try {
+			let spaceapi = JSON.parse(this.responseText);
+			if (spaceapi.state.open) {
+				statusText.classList.add("doorstatus-open");
+				statusText.innerHTML = "Geöffnet";
+			} else {
+				statusText.classList.add("doorstatus-closed");
+				statusText.innerHTML = "Geschlossen";
+			}
+		} catch (error) {
+			console.error("Error fetching door status", error);
 		}
 	}
 }
-xhttp.open("GET", "https://status.k4cg.org/status.json", true);
+xhttp.open("GET", "https://spaceapi.k4cg.org/spaceapi.json", true);
 xhttp.send();
-
-
