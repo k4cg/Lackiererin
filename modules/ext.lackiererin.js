@@ -15,8 +15,10 @@ xhttp.onreadystatechange = function () {
 		if (this.readyState == 4 && this.status == 200) {
 			try {
 				let spaceapi = JSON.parse(this.responseText);
+				let sinceMinutes = Math.floor((Date.now() / 1000 - spaceapi.state.lastchange) / 60);
 				if (spaceapi.state.open) {
 					statusText.classList.add("doorstatus-open");
+					statusText.title = "Seit " + sinceMinutes + " Minuten geöffnet";
 					statusText.innerHTML = "Geöffnet";
 				} else {
 					statusText.classList.add("doorstatus-closed");
