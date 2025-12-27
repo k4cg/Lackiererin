@@ -5,6 +5,7 @@ xhttp.onreadystatechange = function () {
 
 	const now = new Date();
 	if ((now.getMonth()+1 == 12) && (now.getDate() >= 27) && (now.getDate() <= 30)) {
+		statusText.classList.add("doorstatus");
 		statusText.classList.add("doorstatus-congress");
 		statusText.innerHTML = "Congress";
 	} else {
