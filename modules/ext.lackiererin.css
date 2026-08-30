@@ -1,7 +1,19 @@
 #p-banner.doorstatus {
-	padding: 0.2em;
-	display: inline-block;
 	background-color: #c9a300;
+}
+
+@media screen and (min-width: 851px) and (max-width: 1099px) {
+	#p-logo-text a {
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+	}
+}
+
+@media screen and (max-width: 850px) {
+	#p-logo-text a {
+		padding-left: 0.2em;
+		padding-right: 0.2em;
+	}
 }
 
 #p-banner.doorstatus-open {
